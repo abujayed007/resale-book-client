@@ -5,9 +5,11 @@ import routes from './routes/routes/Routes';
 
 function App() {
   return (
-    <RouterProvider router={routes}>
-            
-    </RouterProvider>
+    <div className='bg-slate-200'>
+      <RouterProvider router={routes}>
+
+      </RouterProvider>
+    </div>
   );
 }
 

@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import icon from '../../../images/icons/icon.png'
 
-const Header = () => {
+const Navbar = () => {
     const navItems = <>
-        <li>Home</li>
-        <li>Categories</li>
-        <li>Login</li>
-        <li>Sign Up</li>
-        <li>Log Out</li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/categories'>Categories</Link></li>
+        <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/signup'>Sign Up</Link></li>
+        <li><Link>Log Out</Link></li>
     </>
 
 
@@ -29,7 +29,7 @@ const Header = () => {
                     <strong className='text-orange-500 mx-1'> Gallery</strong></Link>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal p-0 gap-x-2 text-orange-500 font-bold bold mx-7">
+                <ul className="menu menu-horizontal text-orange-500 font-bold bold mx-7">
                     {navItems}
                 </ul>
             </div>
@@ -37,4 +37,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;

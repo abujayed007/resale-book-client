@@ -1,12 +1,14 @@
 import React from 'react';
-import { RouterProvider } from 'react-router-dom';
-import Header from '../Pages/Shared/Header/Header';
-import routes from '../routes/routes/Routes';
+import { Outlet, RouterProvider } from 'react-router-dom';
+import Navbar from '../Pages/Shared/Header/Navbar';
+;
+
 
 const Main = () => {
     return (
        <div>
-        <Header></Header>
+        <Navbar></Navbar>
+        <Outlet></Outlet>
        </div>
     );
 };
