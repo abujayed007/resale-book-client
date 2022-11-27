@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Categories = () => {
+const Categories = ({category, i}) => {
+    const {name,  category_id } = category;
+
     return (
-        <div>
-            <h2 class="text-2xl">Categories</h2>
-        </div>
+      <div>
+        <Link to={`category/${category_id}`} class="text-2xl text-blue-400 hover:text-orange-200"> {name}</Link>
+      </div>
     );
 };
 
