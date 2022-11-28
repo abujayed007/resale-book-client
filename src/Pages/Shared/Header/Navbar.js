@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import icon from '../../../images/icons/icon.png'
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => console.error(error))
+    }
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/categories'>Categories</Link></li>
-        <li><Link to='/login'>Login</Link></li>
-        <li><Link to='/signup'>Sign Up</Link></li>
-        <li><Link>Log Out</Link></li>
+        {
+            user?.uid ?
+                <li><button onClick={handleLogOut}>Sign Out</button></li>
+                :
+                <>
+                    <li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/signup'>Sign Up</Link></li>
+                </>
+
+        }
     </>
 
 
@@ -25,7 +42,7 @@ const Navbar = () => {
                 </div>
                 <Link className="btn btn-ghost normal-case font-bold text-xl text-teal-600 ">
                     <img className='h-7 mx-1' src={icon} alt="" />
-                     Books
+                    Books
                     <strong className='text-orange-500 mx-1'> Gallery</strong></Link>
             </div>
             <div className="navbar-end hidden lg:flex">
