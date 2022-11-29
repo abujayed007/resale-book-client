@@ -16,6 +16,7 @@ const Navbar = () => {
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/categories'>Categories</Link></li>
+        <li><Link to='/blogs'>Blogs</Link></li>
         {
             user?.uid ?
                 <li><button onClick={handleLogOut}>Sign Out</button></li>
