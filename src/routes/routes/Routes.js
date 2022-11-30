@@ -4,10 +4,17 @@ import Main from "../../layout/Main";
 import AddBooks from "../../Pages/AddBooks/AddBooks";
 import Blogs from "../../Pages/Blogs/Blogs";
 import Books from "../../Pages/Books/Books";
+import Allbuyers from "../../Pages/Dashboard/Allbuyers/Allbuyers";
+import Allsellers from "../../Pages/Dashboard/Allsellers/Allsellers";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import MyBookings from "../../Pages/MyBookings/MyBookings";
 import SignUp from "../../Pages/SignUp/SignUp";
+import AdminRoute from "../AdminRoute/AdminRoute";
+import BuyerRoute from "../BuyerRoute/BuyerRoute";
+import PrivateRoute from "../PrivateRoute";
+import SellerRoute from "../SellerRoute/SellerRoute";
 
 const routes = createBrowserRouter([
     {
@@ -32,7 +39,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/category/:name',
-                element: <Books></Books>,
+                element: <PrivateRoute><Books></Books></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.name}`)
             }
 
@@ -44,8 +51,20 @@ const routes = createBrowserRouter([
         children: [
             {
                 path:'/dashboard/addbooks',
-                element:<AddBooks></AddBooks>
-            }
+                element:<SellerRoute><AddBooks></AddBooks></SellerRoute>
+            },
+            {
+                path:'/dashboard/mybookings',
+                element:<BuyerRoute><MyBookings></MyBookings></BuyerRoute>
+            },
+            {
+                path:'/dashboard/seller',
+                element:<AdminRoute><Allsellers></Allsellers></AdminRoute>
+            },
+            {
+                path:'/dashboard/buyer',
+                element:<AdminRoute><Allbuyers></Allbuyers></AdminRoute>
+            },
         ]
     },
     {

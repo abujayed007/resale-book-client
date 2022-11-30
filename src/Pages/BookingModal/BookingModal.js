@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const BookingModal = ({ selectedBook, setSelectedBook }) => {
     const { user } = useContext(AuthContext)
     const date = moment().format("MMM Do YY");
-    const { name:itemName, id, story, location, resalePrice, originalPrice } = selectedBook;
+    const { name:itemName, id, story, location, img, resalePrice, originalPrice } = selectedBook;
 
     const handleBooking = e =>{
         e.preventDefault()
@@ -17,17 +17,32 @@ const BookingModal = ({ selectedBook, setSelectedBook }) => {
         const location = form.location.value;
         const phone = form.phone.value
 
-        const myBooking = {
+
+        const booking = {
             bookingDate : date,
             item: itemName,
+            img,
+            price:resalePrice,
             name, 
             email,
             location,
             phone,
         }
-        console.log(myBooking);
-        setSelectedBook(null)
-        toast.success('Booking Successful')
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+           if(data.acknowledged){
+            setSelectedBook(null)
+            toast.success(`${name} , ${email}  booked this ${itemName}`)
+           }
+        })
 
     }
 

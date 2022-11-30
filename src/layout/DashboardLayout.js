@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import AdminHooks from '../Hooks/adminHooks';
+import BuyerHook from '../Hooks/BuyerHook';
+import SellerHooks from '../Hooks/SellerHooks';
 import Navbar from '../Pages/Shared/Header/Navbar';
 
 const DashboardLayout = () => {
+    const { user } = useContext(AuthContext)
+    const [isAdmin] = AdminHooks(user?.email);
+    const [isBuyer] = BuyerHook(user?.email);
+    const [isSeller] = SellerHooks(user?.email);
     return (
         <div>
             <Navbar></Navbar>
@@ -14,9 +22,20 @@ const DashboardLayout = () => {
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 text-base-content">
-                        <li><Link to="/dashboard/addbooks">Add Book</Link></li>
-                    </ul>
+                        {
+                            isBuyer && 
+                            <li><Link to="/dashboard/mybookings">My Bookings</Link></li>
+                        }
+                        {
 
+                          isSeller && <li><Link to="/dashboard/addbooks">Add Book</Link></li>}
+                        {
+                            isAdmin &&
+                            <>
+                                <li><Link to="/dashboard/seller">All Seller</Link></li>
+                                <li><Link to="/dashboard/buyer">All Buyer</Link></li>
+                            </>}
+                    </ul>
                 </div>
             </div>
         </div>

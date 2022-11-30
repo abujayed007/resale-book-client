@@ -1,11 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
+import { useNavigate, useNavigation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddBooks = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
+    const navigate = useNavigation();
 
     const imageHostKey = process.env.REACT_APP_imagebb_key;
 
@@ -58,6 +60,7 @@ const AddBooks = () => {
                     .then(result =>{
                         console.log(result);
                         toast.success(`${data.name} book is added successfully`);
+                        navigate('/dashboard/addbooks')
                         
                     })
                 }

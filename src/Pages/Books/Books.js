@@ -7,7 +7,6 @@ const Books = () => {
   const [selectedBook, setSelectedBook] = useState(null)
   const books = useLoaderData()
 
-
   console.log(books)
   return (
     <section>
