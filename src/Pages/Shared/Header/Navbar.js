@@ -20,7 +20,7 @@ const Navbar = () => {
             user?.uid ?
                 <>
                 <li><Link to='/dashboard'>Dashboard</Link></li>
-                <li><img src={user?.photoURL} alt=""/></li>
+                <li><img className='h-8 rounded-full mt-2' src={user?.photoURL} alt=""/></li>
                 <li><button onClick={handleLogOut}>Sign Out</button></li>
                 </>
                 :
