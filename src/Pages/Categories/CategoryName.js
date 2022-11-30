@@ -5,7 +5,7 @@ import Categories from './Categories';
 const CategoryName = () => {
     const [CategoryName, SetCategoryName] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/categories')
+        fetch('https://resale-market-assaignment-server.vercel.app/categories')
         .then(res => res.json())
         .then(data => {
             SetCategoryName(data)

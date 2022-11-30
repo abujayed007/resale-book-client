@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import book1 from '../../../images/books/book1.jpg'
 import book2 from '../../../images/books/book2.jpg'
 import book3 from '../../../images/books/book3.jpg'

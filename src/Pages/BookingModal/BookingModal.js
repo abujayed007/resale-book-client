@@ -28,7 +28,7 @@ const BookingModal = ({ selectedBook, setSelectedBook }) => {
             location,
             phone,
         }
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://resale-market-assaignment-server.vercel.app/bookings', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'

@@ -40,7 +40,7 @@ const routes = createBrowserRouter([
             {
                 path: '/category/:name',
                 element: <PrivateRoute><Books></Books></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.name}`)
+                loader: ({ params }) => fetch(`https://resale-market-assaignment-server.vercel.app/category/${params.name}`)
             }
 
         ]
