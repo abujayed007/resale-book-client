@@ -15,12 +15,12 @@ const Navbar = () => {
     }
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/categories'>Categories</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         {
             user?.uid ?
                 <>
                 <li><Link to='/dashboard'>Dashboard</Link></li>
+                <li><img src={user?.photoURL} alt=""/></li>
                 <li><button onClick={handleLogOut}>Sign Out</button></li>
                 </>
                 :

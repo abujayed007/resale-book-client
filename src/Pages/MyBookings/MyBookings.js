@@ -23,7 +23,7 @@ const MyBookings = () => {
 
     return (
         <div>
-            <h2>{bookings.length}</h2>
+            <h2 className='text-2xl font-bold'>You have {bookings.length} bookings</h2>
            <div className='grid md:grid-cols-2 sm:grid-cols-1'>
            {
                 bookings.map(booking => <BookingItems key={booking._id} booking={booking}> </BookingItems>)
