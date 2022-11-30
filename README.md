@@ -12,5 +12,7 @@
 
 ### Make a footer 
 
-### Admin Emai and password (imran@gmail.com) (Jayed778) 
+### readme file updated
+
+### Admin Email and password (imran@gmail.com) (Jayed778) 
 

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useQueries, useQuery } from 'react-query';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Allsellers = () => {
+    const {user} = useContext(AuthContext)
     const {data:sellers = []} = useQuery({
         queryKey:['seller'],
         queryFn: async () => {
@@ -31,7 +33,7 @@ const Allsellers = () => {
             <th>{i+1}</th>
             <td>{seller.name}</td>
             <td>{seller.email}</td>
-            {/* <td>{ user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td> */}
+            <td><button className='btn btn-xs btn-primary'>Make Admin</button></td>
             <td><button className='btn btn-xs btn-danger'>Delete</button></td>
           </tr>)
       }
