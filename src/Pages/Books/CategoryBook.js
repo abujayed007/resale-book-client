@@ -16,7 +16,7 @@ const CategoryBook = ({ book, setSelectedBook }) => {
                 <p>
                     {
 
-                        story.length > 300 ? story.slice(1, 300) + '...' : {story}
+                        story?.length > 300 ? story.slice(1, 300) + '...' : {story}
                     }
                 </p>
                 <div className="card-actions">

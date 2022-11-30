@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../../layout/DashboardLayout";
 import Main from "../../layout/Main";
+import AddBooks from "../../Pages/AddBooks/AddBooks";
 import Blogs from "../../Pages/Blogs/Blogs";
 import Books from "../../Pages/Books/Books";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
@@ -29,18 +31,28 @@ const routes = createBrowserRouter([
                 element: <Blogs></Blogs>
             },
             {
-                path:'/category/:id',
-                element:<Books></Books>,
-                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+                path: '/category/:name',
+                element: <Books></Books>,
+                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.name}`)
             }
-           
+
         ]
     },
     {
-        path:'*',
-        element:<ErrorPage></ErrorPage>
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+            {
+                path:'/dashboard/addbooks',
+                element:<AddBooks></AddBooks>
+            }
+        ]
+    },
+    {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
-    
+
 ])
 
 export default routes

@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Categories = ({category}) => {
-    const {name,  category_id } = category;
+    const {category_name} = category;
 
     return (
       <div>
-        <Link to={`category/${category_id}`} className="text-2xl font-bold text-black hover:text-orange-200"> {name}</Link>
+        <Link to={`category/${category_name}`} className="text-2xl font-bold text-black hover:text-orange-200"> {category_name}</Link>
       </div>
     );
 };
