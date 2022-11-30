@@ -4,6 +4,7 @@ import BuyerHook from '../../../Hooks/BuyerHook';
 import About from '../../About/About';
 import MyBookings from '../../MyBookings/MyBookings';
 import Banner from '../Banner/Banner';
+import ExtraSection from '../ExtraSection/ExtraSection';
 
 const Home = () => {
     const {user} = useContext(AuthContext)
@@ -14,6 +15,7 @@ const Home = () => {
 
             <Banner></Banner>
             <About></About>
+            <ExtraSection></ExtraSection>
         </div>
     );
 };

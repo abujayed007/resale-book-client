@@ -11,10 +11,9 @@ const Banner = () => {
         <div className="carousel md:w-2/3 sm:w-2/3 lg:w-10/12  flex mx-auto">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src={book1} alt='' className="rounded-lg" />
-                <div className="absolute left-20 right-[600px] lg:top-2/3 md:top-1/4 sm:top-1/2">
-                    <h2 class="lg:text-5xl md:text-3xl sm:text-xl text-green-500 font-extrabold">Buy Your
-                        <strong className='text-pink-600'>Favorite Books</strong> <strong className='text-blue-500'>From Here</strong>  </h2>
-                    <Link> <p class="text-yellow-400">Shop now -❯</p></Link>
+                <div className="absolute font-serif left-20 right-20 top-1/4">
+                    <h2 class="text-2xl text-slate-300 font-extrabold">“The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”</h2>
+                    <p className='text-xl text-black font-bold'>Dr. Seuss</p>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide4" className="btn btn-circle">❮</a>
@@ -23,10 +22,9 @@ const Banner = () => {
             </div>
             <div id="slide2" className="carousel-item relative w-full">
                 <img src={book2} alt='' className="rounded-lg" />
-                <div className="absolute left-20 right-[600px] lg:top-2/3 md:top-1/4 sm:top-1/2">
-                    <h2 class="lg:text-5xl md:text-3xl sm:text-xl text-green-500 font-extrabold">Buy Your
-                        <strong className='text-pink-600'>Favorite Books</strong> <strong className='text-blue-500'>From Here</strong>  </h2>
-                    <Link> <p class="text-yellow-400">Shop now -❯</p></Link>
+                <div className="absolute font-serif left-20 right-20 top-1/4">
+                    <h2 class="text-2xl text-slate-300 font-extrabold">“The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”</h2>
+                    <p className='text-xl text-black font-bold'>Dr. Seuss</p>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide1" className="btn btn-circle">❮</a>
@@ -35,10 +33,9 @@ const Banner = () => {
             </div>
             <div id="slide3" className="carousel-item relative w-full">
                 <img src={book3} alt='' className="rounded-lg" />
-                <div className="absolute left-20 right-[600px] lg:top-2/3 md:top-1/4 sm:top-1/2">
-                    <h2 class="lg:text-5xl md:text-3xl sm:text-xl text-green-500 font-extrabold">Buy Your
-                        <strong className='text-pink-600'>Favorite Books</strong> <strong className='text-blue-500'>From Here</strong>  </h2>
-                    <Link> <p class="text-yellow-400">Shop now -❯</p></Link>
+                <div className="absolute font-serif left-20 right-20 top-1/4">
+                    <h2 class="text-2xl text-slate-300 font-extrabold">“The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”</h2>
+                    <p className='text-xl text-black font-bold'>Dr. Seuss</p>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide2" className="btn btn-circle">❮</a>
