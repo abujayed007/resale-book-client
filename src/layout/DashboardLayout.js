@@ -5,12 +5,17 @@ import AdminHooks from '../Hooks/adminHooks';
 import BuyerHook from '../Hooks/BuyerHook';
 import SellerHooks from '../Hooks/SellerHooks';
 import Navbar from '../Pages/Shared/Header/Navbar';
+import Loading from '../Pages/Shared/Loading/Loading';
 
 const DashboardLayout = () => {
-    const { user } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext)
     const [isAdmin] = AdminHooks(user?.email);
     const [isBuyer] = BuyerHook(user?.email);
     const [isSeller] = SellerHooks(user?.email);
+
+if(loading){
+    <Loading></Loading>
+}
     return (
         <div>
             <Navbar></Navbar>
